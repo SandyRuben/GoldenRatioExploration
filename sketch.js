@@ -3,6 +3,7 @@ let point, lineColor, lineMode;
 
 
 function setup() {
+  console.log("branch");
   //canvas created for main display
   createCanvas(windowWidth, windowHeight);
 
