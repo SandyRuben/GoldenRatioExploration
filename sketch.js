@@ -1,20 +1,16 @@
 //declare global variables
-let point, lineColor, fibI;
+let point, lineColor, lineMode;
 
-let maxFibNumber = 1000;
-let fibNumbers = [];
 
 function setup() {
   //canvas created for main display
   createCanvas(windowWidth, windowHeight);
 
-  //setting global variables
-  fibI = 0;
-  fibNumbers = [0,1];
-
   //white lines for high visability
   lineColor = 255;
   stroke(lineColor);
+
+  lineMode = 1;
 
   point = createVector(1,1);
 
@@ -23,13 +19,24 @@ function setup() {
 }
 
 function draw() {
-  //populate array
-  fibI++;
-  fibNumbers.push(fibNumbers[fibI]+fibNumbers[fibI-1]);
-
     //draw line from the center out
     translate(width*.5, height*.5);
+
+    //rotate canvas 
+    // rotate(radians(millis()));
+
+    if (lineMode == 1) {
+      lineColor = 0;
+    } else if (lineMode == 2){
+      lineColor = 255;
+    } else {
+      lineColor = random(255);
+    }
+    stroke(lineColor);
+
     line(0,0, point.x, point.y);
+
+    //additional lines for extra fun
     // line(0,0, -point.x, -point.y);
     // line(0,0, point.x/2, point.y/2);
     // line(0,0, -point.x/2, -point.y/2);
@@ -41,17 +48,19 @@ function draw() {
 }
 
 function mouseClicked() {
-  if (lineColor == 255) {
-    lineColor = 0;
-  } else {
-    lineColor = 255;
-  };
- 
 
-  stroke(lineColor);
+  if(lineMode >=3 ) {
+    lineMode = 1;
+  } else {
+    lineMode++;
+  }
+  print(lineMode);
+  //inverse line color when mouse is clicked
+  
 }
 
 function windowResized() {
+  //scale canvas to window if resized for full immersion
   createCanvas(windowWidth, windowHeight);
   translate(width*.5, height*.5);
   background(0);
