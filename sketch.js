@@ -26,9 +26,9 @@ function draw() {
     // rotate(radians(millis()));
 
     if (lineMode == 1) {
-      lineColor = 0;
-    } else if (lineMode == 2){
       lineColor = 255;
+    } else if (lineMode == 2){
+      lineColor = 0;
     } else {
       lineColor = random(255);
     }
