@@ -9,6 +9,8 @@ function setup() {
   createCanvas(windowWidth, windowHeight);
 
   //setting global variables
+  fibI = 0;
+  fibNumbers = [0,1];
 
   //white lines for high visability
   lineColor = 255;
@@ -21,7 +23,9 @@ function setup() {
 }
 
 function draw() {
-  //populate array 
+  //populate array
+  fibI++;
+  fibNumbers.push(fibNumbers[fibI]+fibNumbers[fibI-1]);
 
     //draw line from the center out
     translate(width*.5, height*.5);
