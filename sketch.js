@@ -27,7 +27,7 @@ function draw() {
     // rotate(radians(millis()));
 
     if (lineMode == 1) {
-      lineColor = color(0, 0, 80, 1);
+      lineColor = color(0, 0, 90, 1);
     } else if (lineMode == 2){
       lineColor = color(0, 100, 0, 1);
     } else {
