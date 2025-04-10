@@ -3,13 +3,13 @@ let point, lineColor, lineMode;
 
 
 function setup() {
-  console.log("branch");
   //canvas created for main display
   createCanvas(windowWidth, windowHeight);
 
   //white lines for high visability
   lineColor = 255;
   stroke(lineColor);
+  colorMode(HSB, 360, 100, 100, 1);
 
   lineMode = 1;
 
@@ -27,11 +27,12 @@ function draw() {
     // rotate(radians(millis()));
 
     if (lineMode == 1) {
-      lineColor = 255;
+      lineColor = color(0, 0, 80, 1);
     } else if (lineMode == 2){
-      lineColor = 0;
+      lineColor = color(0, 100, 0, 1);
     } else {
-      lineColor = random(255);
+      lineColor = color(random(360), random(100), 100, 1);
+      print(lineColor);
     }
     stroke(lineColor);
 
