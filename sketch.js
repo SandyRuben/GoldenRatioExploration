@@ -7,6 +7,13 @@ function preload() {
   // astralSound = loadSound("assets/astralSound");
   // doomSound = loadSound("assets/doomSound");
   // trippySound = loadSound("assets/trippySound")
+
+  // Prevent top level gesture scrolling/zooming
+  // This if iOS Safari specific
+  document.addEventListener("gesturestart", function (e) {
+    e.preventDefault();
+    return false;
+  });
 }
 
 function setup() {
