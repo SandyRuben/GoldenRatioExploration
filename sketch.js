@@ -40,9 +40,9 @@ function draw() {
     line(0,0, point.x,point.y);
 
     //additional lines for extra fun
-    // line(0,0, -point.x, -point.y);
-    // line(0,0, point.x/2, point.y/2);
-    // line(0,0, -point.x/2, -point.y/2);
+    line(0,0, -point.x, -point.y);
+    line(0,0, point.x/2, point.y/2);
+    line(0,0, -point.x/2, -point.y/2);
 
     //update point to new location
     point.rotate(radians(137.51));
