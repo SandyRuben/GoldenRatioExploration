@@ -10,10 +10,10 @@ function preload() {
 
   // Prevent top level gesture scrolling/zooming
   // This if iOS Safari specific
-  document.addEventListener("gesturestart", function (e) {
-    e.preventDefault();
-    return false;
-  });
+  // document.addEventListener("gesturestart", function (e) {
+  //   e.preventDefault();
+  //   return false;
+  // });
 }
 
 function setup() {
@@ -68,7 +68,7 @@ function draw() {
     point.setMag(5000);
 }
 
-function mouseClicked() {
+function mousePressed() {
   
 
   //cycle between line modes
