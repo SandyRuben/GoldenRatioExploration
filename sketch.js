@@ -60,7 +60,7 @@ function mouseClicked() {
   print(lineMode);
   //inverse line color when mouse is clicked
   
-  navigator.vibrate(500);
+  navigator.vibrate(100);
 }
 
 function windowResized() {
