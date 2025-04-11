@@ -31,7 +31,7 @@ function draw() {
     } else if (lineMode == 2){
       lineColor = color(0, 100, 0, 1);
     } else {
-      lineColor = color(random(360), random(100), 100, 1);
+      lineColor = color(random(360), random(100), 95, 1);
       // print(lineColor);
       rotate(radians(millis()));
     }
@@ -60,6 +60,7 @@ function mouseClicked() {
   print(lineMode);
   //inverse line color when mouse is clicked
   
+  navigator.vibrate(500);
 }
 
 function windowResized() {
