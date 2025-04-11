@@ -33,7 +33,7 @@ function draw() {
     } else {
       lineColor = color(random(360), random(100), 100, 1);
       // print(lineColor);
-      rotate(radians(millis()*2));
+      rotate(radians(millis()));
     }
     stroke(lineColor);
 
