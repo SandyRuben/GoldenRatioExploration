@@ -24,7 +24,7 @@ function draw() {
     translate(width*.5, height*.5);
 
     //rotate canvas 
-    // rotate(radians(millis()));
+    
 
     if (lineMode == 1) {
       lineColor = color(0, 0, 90, 1);
@@ -32,11 +32,12 @@ function draw() {
       lineColor = color(0, 100, 0, 1);
     } else {
       lineColor = color(random(360), random(100), 100, 1);
-      print(lineColor);
+      // print(lineColor);
+      rotate(radians(millis()*2));
     }
     stroke(lineColor);
 
-    line(0,0, point.x, point.y);
+    line(0,0, point.x,point.y);
 
     //additional lines for extra fun
     // line(0,0, -point.x, -point.y);
