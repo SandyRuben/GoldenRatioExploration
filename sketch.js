@@ -1,6 +1,13 @@
 //declare global variables
 let point, lineColor, lineMode;
 
+let astralSound, doomSound, trippySound;
+
+function preload() {
+  // astralSound = loadSound("assets/astralSound");
+  // doomSound = loadSound("assets/doomSound");
+  // trippySound = loadSound("assets/trippySound")
+}
 
 function setup() {
   //canvas created for main display
@@ -17,15 +24,19 @@ function setup() {
 
   //setting a black background to contrast with the white lines
   background(0);
+
+  //draw line from the center out
+  
 }
 
 function draw() {
-    //draw line from the center out
+  if (mouseX > 0 || mouseY > 0) {
+    translate(mouseX, mouseY);
+  } else {
     translate(width*.5, height*.5);
+  }
 
-    //rotate canvas 
-    
-
+    //different line properties for each line mode
     if (lineMode == 1) {
       lineColor = color(0, 0, 90, 1);
     } else if (lineMode == 2){
@@ -36,7 +47,8 @@ function draw() {
       rotate(radians(millis()));
     }
     stroke(lineColor);
-
+    
+    //the OG line
     line(0,0, point.x,point.y);
 
     //additional lines for extra fun
@@ -46,20 +58,21 @@ function draw() {
 
     //update point to new location
     point.rotate(radians(137.51));
-
-    point.setMag(1000);
+    point.setMag(5000);
 }
 
 function mouseClicked() {
+  
 
+  //cycle between line modes
   if(lineMode >=3 ) {
     lineMode = 1;
   } else {
     lineMode++;
   }
-  print(lineMode);
-  //inverse line color when mouse is clicked
+  // print(lineMode);
   
+  //haptic feedback
   navigator.vibrate(100);
 }
 
