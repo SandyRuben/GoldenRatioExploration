@@ -4,12 +4,12 @@ let point, lineColor, lineMode;
 let astralSound, doomSound, trippySound;
 
 function preload() {
-  astralSound = loadSound("assets/astralSound.wav");
+  astralSound = loadSound("./assets/astralSound.wav");
   //Source:Ethereal Ambient music..wav by Clacksberg -- https://freesound.org/s/500218/ -- License: Creative Commons 0
-  doomSound = loadSound("assets/doomSound.wav");
+  doomSound = loadSound("./assets/doomSound.wav");
   //Source: double-flangy remix of Erokia's freesound #538858.flac by Timbre -- https://freesound.org/s/539153/ -- License: Attribution NonCommercial 4.0
   //Drums & Synth Loop - MSfxP9 - 158_5 - (Synth Loop BPM 90)-(FS# 66315-33414) by Erokia -- https://freesound.org/s/538858/ -- License: Attribution NonCommercial 4.0
-  trippySound = loadSound("assets/trippySound.wav");
+  trippySound = loadSound("./assets/trippySound.wav");
   //Source:Nebula Harmony by ViraMiller -- https://freesound.org/s/743389/ -- License: Attribution 4.0
 
   // Prevent top level gesture scrolling/zooming
