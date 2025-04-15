@@ -21,6 +21,7 @@ function preload() {
 }
 
 function setup() {
+  print("astral sound loaded: " + astralSound.isLoaded());
   //canvas created for main display
   createCanvas(windowWidth, windowHeight);
 
