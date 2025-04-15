@@ -4,9 +4,13 @@ let point, lineColor, lineMode;
 let astralSound, doomSound, trippySound;
 
 function preload() {
-  // astralSound = loadSound("assets/astralSound");
-  // doomSound = loadSound("assets/doomSound");
-  // trippySound = loadSound("assets/trippySound")
+  astralSound = loadSound("assets/astralSound.wav");
+  //Source:Ethereal Ambient music..wav by Clacksberg -- https://freesound.org/s/500218/ -- License: Creative Commons 0
+  doomSound = loadSound("assets/doomSound.wav");
+  //Source: double-flangy remix of Erokia's freesound #538858.flac by Timbre -- https://freesound.org/s/539153/ -- License: Attribution NonCommercial 4.0
+  //Drums & Synth Loop - MSfxP9 - 158_5 - (Synth Loop BPM 90)-(FS# 66315-33414) by Erokia -- https://freesound.org/s/538858/ -- License: Attribution NonCommercial 4.0
+  trippySound = loadSound("assets/trippySound.wav");
+  //Source:Nebula Harmony by ViraMiller -- https://freesound.org/s/743389/ -- License: Attribution 4.0
 
   // Prevent top level gesture scrolling/zooming
   // This if iOS Safari specific
@@ -33,7 +37,6 @@ function setup() {
   background(0);
 
   //draw line from the center out
-  
 }
 
 function draw() {
@@ -70,7 +73,6 @@ function draw() {
 
 function mousePressed() {
   
-
   //cycle between line modes
   if(lineMode >=3 ) {
     lineMode = 1;
@@ -78,6 +80,27 @@ function mousePressed() {
     lineMode++;
   }
   // print(lineMode);
+
+  //stop sounds to ensure they are restarted
+  astralSound.stop();
+  doomSound.stop();
+  trippySound.stop();
+
+  //loop sounds for full immersion
+  switch (lineMode) {
+    case 1:
+      astralSound.loop();
+      break;
+    case 2:
+      doomSound.loop();
+      break;
+    case 3:
+      trippySound.loop();
+      break;
+    default:
+      print("error: lineMode = " + lineMode);
+      break;
+  }
   
   //haptic feedback
   navigator.vibrate(100);
